@@ -6,7 +6,7 @@ export default {
   data() {
     return {
       base_url: "http://127.0.0.1:8000/",
-      posts_path: "api/posts",
+      posts_API: "api/posts",
       loading: true,
       posts: null,
       error: null
@@ -27,11 +27,14 @@ export default {
           console.error(error);
           this.error = error.message;
         });
+    },
+    getImageFromPath(path) {
+      //  console.log();
+      return this.base_url + "storage/" + path;
     }
   },
-
   mounted() {
-    const url = this.base_url + this.posts_api;
+    const url = this.base_url + this.posts_API;
     this.getPosts(url);
   }
 };
@@ -76,7 +79,12 @@ export default {
                     <h2>
                       {{ post.title }}
                     </h2>
+                    <!-- post.title -->
                   </div>
+                  <div class="card-footer">
+                    <span class="badge bg-primary">{{ post.id }}</span>
+                  </div>
+                  <!-- post.di -->
                 </div>
               </div>
             </div>
