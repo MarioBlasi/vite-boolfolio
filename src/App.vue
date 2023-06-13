@@ -1,15 +1,11 @@
 <script>
-import { onMounted } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
 import axios from "axios";
 
 export default {
-  components: {
-    HelloWorld
-  },
+  components: {},
   data() {
     return {
-      base_API: "http://127.0.0.1:8000/",
+      base_url: "http://127.0.0.1:8000/",
       posts_path: "api/posts",
       loading: true,
       posts: null,
@@ -35,19 +31,55 @@ export default {
   },
 
   mounted() {
-    const url = this.base_API + this.posts_path;
+    const url = this.base_url + this.posts_api;
     this.getPosts(url);
   }
 };
 </script>
 
 <template>
-  <div class="posts">
-    <div class="container">
-      <div class="row">
-        <div class="col d-flex justify-content-center p-5 shadow">
-          <div class="card shadow">
-            <h1>FrontEND-4</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="p-5 mb-4 bg-light rounded-3 shadow">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold text-success">FrontEND-4</h1>
+            <p class="col-md-8 fs-4">
+              Using a series of utilities, you can create this jumbotron, just
+              like the one in previous versions of Bootstrap. Check out the
+              examples below for how you can remix and restyle it to your
+              liking.
+            </p>
+            <button class="btn btn-danger btn-lg" type="button">
+              Example button
+            </button>
+          </div>
+        </div>
+
+        <div class="posts">
+          <div class="container">
+            <div
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"
+            >
+              <div
+                class="col d-flex justify-content-center p-5"
+                v-for="post in posts"
+                :key="post.id"
+              >
+                <div class="card shadow">
+                  <img
+                    class="card-img-top"
+                    :src="getImagefromPath(post.cover_image)"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h2>
+                      {{ post.title }}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -57,32 +89,4 @@ export default {
 
 <style lang="scss">
 @use "./styles/general.scss";
-
-.vue-home {
-  color: #2c3e50;
-  background: #181818;
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>
