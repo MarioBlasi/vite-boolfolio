@@ -81,7 +81,7 @@ export default {
     </div>
   </div>
 
-  <section class="posts" v-if="posts">
+  <section class="posts" v-if="posts && !loading">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
         <div
@@ -137,6 +137,110 @@ export default {
       </nav>
     </div>
   </section>
+  <div v-else>
+    <section class="loading">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card" aria-hidden="true">
+              <img
+                src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary disabled placeholder col-6"
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" aria-hidden="true">
+              <img
+                src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary disabled placeholder col-6"
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" aria-hidden="true">
+              <img
+                src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary disabled placeholder col-6"
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" aria-hidden="true">
+              <img
+                src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary disabled placeholder col-6"
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
   <!-- ProjectCard.vue -->
   <div>
     <h2>Progetti</h2>
@@ -146,12 +250,4 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
-h1 {
-  font-size: 10.4em;
-
-  span.yellow {
-    color: yellow;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

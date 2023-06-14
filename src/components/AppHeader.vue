@@ -19,18 +19,19 @@ export default {
         >Contacts</router-link
       >
     </nav>
+
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <ul class="nav navbar-nav">
+        <li>
+          <a class="nav-item nav-link active" href="#" aria-current="page"
+            >nav n 1<span class="visually-hidden">(current)</span></a
+          >
+        </li>
+        <a class="nav-item nav-link" href="#">nav n 2</a>
+      </ul>
+    </nav>
   </header>
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="#" aria-current="page">Active link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled link</a>
-    </li>
-  </ul>
+
   <!-- <router-view></router-view> -->
 </template>
 
