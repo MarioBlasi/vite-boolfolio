@@ -1,36 +1,57 @@
 <script>
 import axios from "axios";
-
+import ProjectCard from "./components/ProjectCard.vue";
 export default {
-  components: {},
+  components: { ProjectCard },
   data() {
     return {
       base_url: "http://127.0.0.1:8000/",
       posts_API: "api/posts",
       loading: true,
       posts: null,
-      error: null
+      error: null,
+      projects: []
     };
+  },
+  created() {
+    // Effettua la chiamata all'API per ottenere i dati dei progetti
+    // e assegna i dati ricevuti all'array "projects"
+    // Esempio:
+    fetch("https://api.example.com/projects")
+      .then((response) => response.json())
+      .then((data) => {
+        this.projects = data;
+      })
+      .catch((error) => {
+        console.error("Errore durante la richiesta API:", error);
+      });
   },
   methods: {
     getPosts(url) {
       axios
         .get(url)
         .then((response) => {
-          // Gestisci la risposta
-          console.log(response.data);
           this.posts = response.data.posts;
           this.loading = false;
         })
         .catch((error) => {
-          // Gestisci l'errore
-          console.error(error);
           this.error = error.message;
         });
     },
     getImageFromPath(path) {
-      //  console.log();
       return this.base_url + "storage/" + path;
+    },
+    prevPage(path) {
+      this.getPosts(path);
+    },
+    nextPage(path) {
+      this.getPosts(path);
+    },
+    truncateText(text) {
+      if (text.lenght > this.max_text_lenght) {
+        return text.slice(0, this.max_text_lenght) + "...";
+      }
+      return text;
     }
   },
   mounted() {
@@ -43,10 +64,10 @@ export default {
 <template>
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col pt-5">
         <div class="p-5 mb-4 bg-light rounded-3 shadow">
           <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold text-success">FrontEND-4</h1>
+            <h1 class="display-5 fw-bold text-success">FrontEND-3</h1>
             <p class="col-md-8 fs-4">
               Using a series of utilities, you can create this jumbotron, just
               like the one in previous versions of Bootstrap. Check out the
@@ -58,39 +79,73 @@ export default {
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="posts">
-          <div class="container">
-            <div
-              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4"
-            >
-              <div
-                class="col d-flex justify-content-center p-5"
-                v-for="post in posts"
-                :key="post.id"
-              >
-                <div class="card shadow">
-                  <img
-                    class="card-img-top"
-                    :src="getImagefromPath(post.cover_image)"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <h2>
-                      {{ post.title }}
-                    </h2>
-                    <!-- post.title -->
-                  </div>
-                  <div class="card-footer">
-                    <span class="badge bg-primary">{{ post.id }}</span>
-                  </div>
-                  <!-- post.di -->
-                </div>
-              </div>
+  <div class="posts">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+        <div
+          class="col d-flex justify-content-center p-5"
+          v-for="post in posts.data"
+        >
+          <div class="card shadow">
+            <img
+              class="card-img-top"
+              :src="getImageFromPath(post.cover_image)"
+              alt=""
+            />
+            <div class="card-body">
+              <h2>
+                {{ post.title }}
+              </h2>
+              <p>
+                {{ truncateText(post.content) }}
+              </p>
+              <!-- post.title -->
             </div>
+            <div class="card-footer">
+              <span class="badge bg-info">{{ post.id }}</span>
+            </div>
+            <!-- post.di -->
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="container" v-if="posts">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item">
+          <button
+            class="page-link"
+            aria-label="Previous"
+            v-if="posts.prev_page_url"
+            @click="prevPage(posts.prev_page_url)"
+          >
+            <span aria-hidden="true">&laquo;</span>
+          </button>
+        </li>
+        <li class="page-item">
+          <button
+            class="page-link"
+            aria-label="Next"
+            v-if="posts.next_page_url"
+            @click="nextPage(posts.next_page_url)"
+          >
+            <span aria-hidden="true">&raquo;</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- ProjectCard.vue -->
+  <div>
+    <h2>Progetti</h2>
+    <div v-for="project in projects" :key="project.id">
+      <project-card :project="project" />
     </div>
   </div>
 </template>
