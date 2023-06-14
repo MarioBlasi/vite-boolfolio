@@ -18,7 +18,4 @@ export default {
   </div>
 </template>
 
-<style scoped>
-.project-card {
-}
-</style>
+<style scoped></style>
