@@ -14,10 +14,7 @@ export default {
     };
   },
   created() {
-    // Effettua la chiamata all'API per ottenere i dati dei progetti
-    // e assegna i dati ricevuti all'array "projects"
-    // Esempio:
-    fetch("https://api.example.com/projects")
+    fetch("http://127.0.0.1:8000/")
       .then((response) => response.json())
       .then((data) => {
         this.projects = data;
