@@ -4,7 +4,7 @@ import PostList from "../components/PostList.vue";
 
 export default {
   name: "HomeView",
-  components: { AppBanner, PostList, PostList }
+  components: { AppBanner, PostList }
 };
 </script>
 

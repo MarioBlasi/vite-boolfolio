@@ -1,4 +1,5 @@
 <script>
+import AppBanner from "./components/AppBanner.vue";
 export default {
   name: "AboutView",
   components: { AppBanner }
