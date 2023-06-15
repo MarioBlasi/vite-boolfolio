@@ -2,7 +2,7 @@
 import axios from "axios";
 import AppBanner from "../components/AppBanner.vue";
 export default {
-  name: "SingolPostView",
+  name: "SinglePostView",
   components: {
     AppBanner
   },

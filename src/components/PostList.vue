@@ -107,7 +107,7 @@ export default {
               </p>
               <router-link
                 class="nav-link"
-                :to="{ name: 'singol-post', params: { slug: post.slug } }"
+                :to="{ name: 'single-post', params: { slug: post.slug } }"
                 >Read more</router-link
               >
             </div>
