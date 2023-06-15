@@ -1,5 +1,5 @@
 <script>
-import AppBanner from "./components/AppBanner.vue";
+import AppBanner from "../components/AppBanner.vue";
 import PostList from "../components/PostList.vue";
 
 export default {
