@@ -45,6 +45,10 @@ export default {
     nextPage(path) {
       this.getPosts(path);
     },
+    /**
+     *
+     * @param {string} text
+     */
     truncateText(text) {
       if (text.lenght > this.max_text_lenght) {
         return text.slice(0, this.max_text_lenght) + "...";
