@@ -23,11 +23,14 @@ export default {
     <nav class="navbar navbar-expand navbar-light bg-light">
       <ul class="nav navbar-nav">
         <li>
-          <a class="nav-item nav-link active" href="#" aria-current="page"
-            >nav n 1<span class="visually-hidden">(current)</span></a
+          <router-link
+            class="nav-link"
+            :to="{ name: 'home' }"
+            aria-current="page"
+            >Home</router-link
           >
         </li>
-        <a class="nav-item nav-link" href="#">nav n 2</a>
+        <a class="nav-item" href="#">nav n 2</a>
       </ul>
     </nav>
   </header>

@@ -101,12 +101,15 @@ export default {
               <p>
                 {{ truncateText(post.content) }}
               </p>
-              <!-- post.title -->
+              <router-link
+                class="nav-link"
+                :to="{ name: 'singol-post', params: { slug: post.slug } }"
+                >Read more</router-link
+              >
             </div>
             <div class="card-footer">
               <span class="badge bg-info">{{ post.id }}</span>
             </div>
-            <!-- post.di -->
           </div>
         </div>
       </div>
