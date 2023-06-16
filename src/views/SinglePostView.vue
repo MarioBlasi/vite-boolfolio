@@ -1,6 +1,6 @@
 <script>
-import axios from "axios";
 import AppBanner from "../components/AppBanner.vue";
+import axios from "axios";
 export default {
   name: "SinglePostView",
   components: {
@@ -10,25 +10,28 @@ export default {
     return {
       post: null,
       loading: true,
-      base_API: "http://127.0.0.1:8000/"
+      base_url: "http://127.0.0.1:8000/"
     };
   },
   methods: {
     getImageFromPath(path) {
+      //console.log(this.base_url + 'storage/' + path);
       return this.base_url + "storage/" + path;
     }
   },
   mounted() {
-    const url = (this.base_url = "api/posts/" + this.$route.params.slug);
+    const url = this.base_url + "api/posts/" + this.$route.params.slug;
     console.log(url);
     axios
       .get(url)
       .then((response) => {
         console.log(response);
-        if (response.succes) {
+        if (response.data.success) {
           this.post = response.data.result;
         } else {
-          // redirect to a 404
+          this.$router.push({
+            name: "NotFound"
+          });
         }
       })
       .catch((error) => {
@@ -39,40 +42,49 @@ export default {
 </script>
 
 <template>
-  <AppBanner :title="post.title" v-if="post"> </AppBanner>
+  <AppBanner :title="post.title" v-if="post"></AppBanner>
 
   <div v-if="post">
-    <div>
-      <img
-        class="img-fluid w-100"
-        :src="getImageFromPath(post.cover_image)"
-        alt=""
-      />
+    <!--  <img class="img-fluid w-100" :src="getImageFromPath(post.cover_image)" alt=""> -->
+    <div
+      class="jumbotron p-5 mb-4 bg-light rounded-3"
+      :style="{ backgroundImage: `url(${getImageFromPath(post.cover_image)})` }"
+    >
+      <div class="container-fluid py-5"></div>
     </div>
     <div class="container">
+      <div class="content">
+        <p>
+          {{ post.content }}
+        </p>
+      </div>
+
+      <hr />
+
       <div class="metadata">
-        <div class="author"><strong>Author:</strong>{{ post.user.name }}</div>
+        <div class="author"><strong>Author: </strong>{{ post.user.name }}</div>
         <div class="category">
           <strong>Category: </strong>
-          <span v-if="post.category">{{ post.category?.name }}</span>
-          <span v-else>N/A</span>
+          <span v-if="post.category">{{ post.category.name }}</span>
+          <span v-else> N/A </span>
         </div>
-        <div class="technology">
-          <ul v-if="post.technologies.lenght > 0">
-            <li v-for="technology in post.technologies">
-              {{ technology.name }}
+        <div class="tags">
+          <strong>Tags: </strong>
+          <ul v-if="post.tags.lenght > 0">
+            <li v-for="tag in post.tags">
+              {{ tag.name }}
             </li>
           </ul>
           <span v-else>N/A</span>
         </div>
       </div>
-      <p>
-        {{ post.content }}
-      </p>
     </div>
   </div>
 </template>
 
-<style lang="scss">
-@use "./styles/general.scss";
+<style>
+.jumbotron {
+  height: 300px;
+  background-attachment: fixed;
+}
 </style>

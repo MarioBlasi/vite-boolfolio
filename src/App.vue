@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <app-header> </app-header>
+  <app-header></app-header>
   <router-view></router-view>
 </template>
 

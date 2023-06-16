@@ -3,6 +3,7 @@ import HomeView from "./views/HomeView.vue";
 import AboutView from "./views/AboutView.vue";
 import ContactsView from "./views/ContactsView.vue";
 import SinglePostView from "./views/SinglePostView.vue";
+import NotFoundView from "./views/NotFoundView.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -26,8 +27,13 @@ const router = createRouter({
       path: "/contacts",
       name: "contacts",
       component: ContactsView
+    },
+    {
+      path: "/notfound",
+      name: "notfound",
+      component: NotFoundView
     }
   ]
 });
 
-export default router;
+export { router };

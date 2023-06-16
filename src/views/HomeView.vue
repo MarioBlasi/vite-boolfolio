@@ -7,10 +7,9 @@ export default {
   components: { AppBanner, PostList }
 };
 </script>
-
 <template>
   <AppBanner title="Home Page"></AppBanner>
   <PostList></PostList>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="sass" scoped></style>
