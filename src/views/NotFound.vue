@@ -2,14 +2,15 @@
 import AppBanner from "../components/AppBanner.vue";
 
 export default {
-  name: "NotFound",
+  name: "NotFoundView",
   components: { AppBanner }
 };
 </script>
+
 <template>
   <div>
     <h1>NOT FOUND</h1>
-    <route-link :to="{ name: 'home' }">COME BACK -> </route-link>
+    <router-link :to="{ name: 'home' }">COME BACK -> </router-link>
   </div>
 </template>
 
