@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <div class="project-card">
+  <div class="project-card shadow">
     <h3>{{ project.title }}</h3>
     <p>{{ project.description }}</p>
     <p>{{ project.author }}</p>

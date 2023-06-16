@@ -10,7 +10,7 @@ export default {
 <template>
   <div>
     <h1>NOT FOUND</h1>
-    <router-link :to="{ name: 'home' }">COME BACK -> </router-link>
+    <router-link :to="{ name: 'home' }">COME BACK</router-link>
   </div>
 </template>
 
