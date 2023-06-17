@@ -67,26 +67,67 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col pt-5">
-        <div class="p-5 mb-4 bg-light rounded-3 shadow">
-          <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold text-success">FrontEND-3</h1>
-            <p class="col-md-8 fs-4">
-              Using a series of utilities, you can create this jumbotron, just
-              like the one in previous versions of Bootstrap. Check out the
-              examples below for how you can remix and restyle it to your
-              liking.
-            </p>
-            <button class="btn btn-danger btn-lg" type="button">
-              Example button
-            </button>
-          </div>
+  <main class="site-wrapper">
+    <div class="pt-table">
+      <div class="pt-tablecell page-welcome relative">
+        <!-- .close -->
+        <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
+        <!-- /.close -->
+
+        <div class="author-image-large">
+          <img src="images/author.png" alt="" />
         </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-7">
+              <div class="page-title">
+                <h2>
+                  Mario <span class="primary">Blasi</span>
+                  <span class="title-bg">About</span>
+                </h2>
+                <p>
+                  A product designer from England, who focuses on interactive
+                  design & A freelance designer focusing on typography & clean
+                  interfaces. Also works in dignissimos non quos Google..
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maiores repellendus corporis, tenetur inventore perferendis
+                  reprehenderit autem dignissimos non quos unde eveniet sapiente
+                  necessitatibus consequuntur ea ab dolore.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+
+        <nav class="page-nav clear">
+          <div class="container">
+            <div class="flex flex-middle space-between">
+              <span class="prev-page"
+                ><a href="index.html" class="link">&larr; Prev Page</a></span
+              >
+              <span class="copyright"
+                >Copyright &copy; 2021, Designed &amp; Developed by
+                <a href="https://themefisher.com/">Themefisher</a>.</span
+              >
+              <span class="next-page"
+                ><a href="about.html" class="link">Next Page &rarr;</a></span
+              >
+            </div>
+          </div>
+          <!-- /.page-nav -->
+        </nav>
+        <!-- /.container -->
       </div>
+      <!-- /.pt-tablecell -->
     </div>
-  </div>
+    <!-- /.pt-table -->
+  </main>
+  <!-- /.site-wrapper -->
 
   <section class="posts" v-if="posts && !loading">
     <div class="container">

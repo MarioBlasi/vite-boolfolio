@@ -10,6 +10,7 @@ export default {
 
 <template>
   <AppBanner title="Home Page"></AppBanner>
+
   <PostList></PostList>
 </template>
 
