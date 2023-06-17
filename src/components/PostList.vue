@@ -2,7 +2,10 @@
 import axios from "axios";
 import ProjectCard from "../components/ProjectCard.vue";
 export default {
-  components: { ProjectCard, PostList },
+  name: "PostList",
+  components: {
+    ProjectCard
+  },
   data() {
     return {
       base_url: "http://127.0.0.1:8000/",

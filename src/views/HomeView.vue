@@ -7,6 +7,7 @@ export default {
   components: { AppBanner, PostList }
 };
 </script>
+
 <template>
   <AppBanner title="Home Page"></AppBanner>
   <PostList></PostList>
