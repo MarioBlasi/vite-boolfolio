@@ -68,19 +68,15 @@ export default {
 
 <template>
   <main class="site-wrapper">
-    <div class="pt-table">
-      <div class="pt-tablecell page-welcome relative">
+    <div class="container pt-5">
+      <div class="row mt-5 page-welcome relative">
         <!-- .close -->
         <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
         <!-- /.close -->
 
-        <div class="author-image-large">
-          <img src="images/author.png" alt="" />
-        </div>
-
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-md-6 col-lg-7">
+            <div class="col-10 col-xs-12 col-md-6 col-lg-5">
               <div class="page-title">
                 <h2>
                   Mario <span class="primary">Blasi</span>
@@ -99,28 +95,16 @@ export default {
                 </p>
               </div>
             </div>
+            <div class="col col-xs-12 col-md-6 col-lg-2 mt-3 mt-md-0">
+              <img
+                class="h-75"
+                src="https://trucchifacebook.com/wp-content/uploads/2014/11/Profilo-facebook-anonimo-750x420.jpg"
+                alt=""
+              />
+            </div>
           </div>
           <!-- /.row -->
         </div>
-        <!-- /.container -->
-
-        <nav class="page-nav clear">
-          <div class="container">
-            <div class="flex flex-middle space-between">
-              <span class="prev-page"
-                ><a href="index.html" class="link">&larr; Prev Page</a></span
-              >
-              <span class="copyright"
-                >Copyright &copy; 2021, Designed &amp; Developed by
-                <a href="https://themefisher.com/">Themefisher</a>.</span
-              >
-              <span class="next-page"
-                ><a href="about.html" class="link">Next Page &rarr;</a></span
-              >
-            </div>
-          </div>
-          <!-- /.page-nav -->
-        </nav>
         <!-- /.container -->
       </div>
       <!-- /.pt-tablecell -->
@@ -133,12 +117,12 @@ export default {
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
         <div
-          class="col d-flex justify-content-center p-5"
+          class="col d-flex justify-content-center"
           v-for="post in posts.data"
         >
-          <div class="card h-100 shadow">
+          <div class="card h-100">
             <img
-              class="card-img-top"
+              class="card-img-top shadow"
               :src="getImageFromPath(post.cover_image)"
               alt=""
             />
@@ -294,7 +278,6 @@ export default {
   </div>
   <!-- ProjectCard.vue -->
   <div>
-    <h2>Progetti</h2>
     <div v-for="project in projects" :key="project.id">
       <project-card :project="project" />
     </div>

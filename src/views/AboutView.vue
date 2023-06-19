@@ -41,7 +41,7 @@ export default {
                 </figure>
                 <!-- /.author-bio -->
                 <div class="author-desc">
-                  <p><b>Date of birth:</b> 29th july, 1984</p>
+                  <p><b>Date of birth:</b> 05th july, 1984</p>
                   <p><b>Language:</b> English, Spanish</p>
                   <p><b>Expert in:</b> UI/UX, Web development</p>
                   <p><b>Freelance:</b> Available</p>
@@ -63,7 +63,7 @@ export default {
               </div>
               <div class="skill-wrapper">
                 <div class="progress clear">
-                  <div class="skill-name">JavaScript</div>
+                  <div class="skill-name bg-danger">JavaScript</div>
                   <div class="skill-bar">
                     <div class="bar"></div>
                   </div>
@@ -125,25 +125,6 @@ export default {
           </div>
           <!-- /.row -->
         </div>
-        <!-- /.container -->
-
-        <nav class="page-nav clear">
-          <div class="container">
-            <div class="flex flex-middle space-between">
-              <span class="prev-page"
-                ><a href="welcome.html" class="link">&larr; Prev Page</a></span
-              >
-              <span class="copyright"
-                >Copyright &copy; 2021, Designed &amp; Developed by
-                <a href="https://themefisher.com/">Themefisher</a>.</span
-              >
-              <span class="next-page"
-                ><a href="services.html" class="link">Next Page &rarr;</a></span
-              >
-            </div>
-          </div>
-          <!-- /.page-nav -->
-        </nav>
         <!-- /.container -->
       </div>
       <!-- /.pt-tablecell -->
