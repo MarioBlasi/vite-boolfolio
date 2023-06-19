@@ -1,13 +1,6 @@
 // Import all of Bootstrap's CSS
 @import "/node_modules/bootstrap/scss/bootstrap";
 
-/**
- * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
- */
-
 /*------------------------------------------------
 	Base Styles
 -------------------------------------------------*/
@@ -1231,191 +1224,6 @@ label {
   width: 100%;
   height: 100%;
 }
-
-/*------------------------------------------------
-      Responsive Media Queries
-  -------------------------------------------------*/
-/*============================================================
-      Macbook pro 13 inch
-  ==============================================================*/
-/*============================================================
-      For Small Desktop / tablet landscape
-  ==============================================================*/
-@media (min-width: 980px) and (max-width: 1150px) {
-  .author-image-large img {
-    height: calc(80vh - 4px);
-  }
-}
-/*============================================================
-      Tablet (Portrait) Design for a width of 768px
-  ==============================================================*/
-@media (min-width: 768px) and (max-width: 979px) {
-  body {
-    overflow-x: hidden;
-  }
-  .page-title h2 {
-    font-size: 40px;
-  }
-  .page-title .title-bg {
-    font-size: 100px;
-  }
-  .author-image-large {
-    position: static;
-    margin-bottom: 50px;
-  }
-  .author-image-large img {
-    display: block;
-    height: auto;
-    margin: 0 auto;
-    width: 50%;
-  }
-  .about-author + p {
-    margin-bottom: 50px;
-  }
-  .service-hex {
-    width: 33.3333%;
-  }
-  .service-hex:hover {
-    z-index: 2;
-  }
-  .service-hex:hover svg {
-    transform: scale(1.5);
-  }
-  .service-hex:hover .content {
-    width: 105%;
-  }
-  .service-hex:nth-child(4),
-  .service-hex:nth-child(5) {
-    transform: translate(50%, -15%);
-  }
-  .testimonials .item {
-    padding-top: 45px;
-  }
-  .testimonials .thumb {
-    margin-top: -45px;
-  }
-  .history-item .history-text {
-    padding-right: 15px;
-  }
-  .page-nav {
-    bottom: auto;
-  }
-  .page-nav .flex {
-    display: block;
-    text-align: center;
-  }
-  .page-nav .flex span {
-    display: block;
-    margin: 20px 0;
-  }
-}
-/*============================================================
-      Mobile (Portrait) Design for a width of 320px
-  ==============================================================*/
-@media only screen and (max-width: 767px) {
-  body {
-    overflow-x: hidden;
-  }
-  .pt-table {
-    height: auto;
-  }
-  .pt-table,
-  .pt-tablecell {
-    display: block;
-  }
-  .page-title {
-    margin-bottom: 45px;
-  }
-  .page-title h2 {
-    font-size: 35px;
-  }
-  .page-title .title-bg {
-    font-size: 50px;
-  }
-  .hexagon-item {
-    float: none;
-    margin: 0 auto 50px;
-  }
-  .hexagon-item:first-child {
-    margin-left: auto;
-  }
-  .page-home .hexagon-item:nth-last-child(1),
-  .page-home .hexagon-item:nth-last-child(2),
-  .page-home .hexagon-item:nth-last-child(3) {
-    transform: rotate(30deg) translate(0px, 0px);
-  }
-  .author-image-large {
-    position: static;
-    margin-bottom: 50px;
-  }
-  .author-image-large img {
-    display: block;
-    height: auto;
-    margin: 0 auto;
-    width: 50%;
-  }
-  .about-author {
-    display: block;
-  }
-  .about-author .author-thumb {
-    border: 0 none;
-    margin-bottom: 15px;
-    margin-right: 0;
-    padding: 0;
-  }
-  .about-author .author-desc b {
-    display: block;
-  }
-  .about-author + p {
-    margin-bottom: 50px;
-  }
-  .progress {
-    display: block;
-  }
-  .progress .skill-name {
-    border-right: 0;
-    margin: 0 15px;
-    min-width: auto;
-    text-align: left;
-  }
-  .progress .skill-lavel {
-    border-left: 0;
-    margin: 0 15px;
-    min-width: auto;
-    text-align: left;
-  }
-  .service-hex {
-    float: none;
-    margin: 0 auto 40px;
-    width: 60%;
-  }
-  .service-hex:last-child {
-    margin-bottom: 0;
-  }
-  .service-hex:hover svg {
-    transform: scale(1.8);
-  }
-  .service-hex:hover .content {
-    width: 120%;
-  }
-  .history-block {
-    margin-bottom: 30px;
-  }
-  .contact-form .input-field.name {
-    margin-right: 0;
-  }
-  .page-nav {
-    bottom: auto;
-  }
-  .page-nav .flex {
-    display: block;
-    text-align: center;
-  }
-  .page-nav .flex span {
-    display: block;
-    margin: 20px 0;
-  }
-}
 .dark {
   background-color: #0c0f15;
 }
@@ -1462,7 +1270,7 @@ label {
   position: relative;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 
-  transition-duration: 0.3s;
+  transition-duration: 0.5s;
   transition-property: transform;
 }
 
@@ -1504,38 +1312,6 @@ label {
   transform: translateY(-5px);
 }
 
-@keyframes bounce-animation {
-  16.65% {
-    -webkit-transform: translateY(8px);
-    transform: translateY(8px);
-  }
-
-  33.3% {
-    -webkit-transform: translateY(-6px);
-    transform: translateY(-6px);
-  }
-
-  49.95% {
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);
-  }
-
-  66.6% {
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
-  }
-
-  83.25% {
-    -webkit-transform: translateY(1px);
-    transform: translateY(1px);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
 .bounce {
   animation-name: bounce-animation;
   animation-duration: 2s;
@@ -1544,14 +1320,14 @@ label {
 /*everything below here is just setting up the page, so dont worry about it */
 
 nav {
-  background: none !important;
-
   text-transform: uppercase;
   li {
     margin-left: 3em;
     margin-right: 3em;
+    color: inherit !important;
     a {
-      transition: 0.5s color ease-in-out;
+      text-decoration: none;
+      color: white;
     }
   }
 }

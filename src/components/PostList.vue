@@ -76,7 +76,7 @@ export default {
 
         <div class="container">
           <div class="row">
-            <div class="col-10 col-xs-12 col-md-6 col-lg-5">
+            <div class="col-10 col-xs-12 col-md-6 col-lg-5 mx-5">
               <div class="page-title">
                 <h2>
                   Mario <span class="primary">Blasi</span>
@@ -95,7 +95,7 @@ export default {
                 </p>
               </div>
             </div>
-            <div class="col col-xs-12 col-md-6 col-lg-2 mt-3 mt-md-0">
+            <div class="col col-xs-12 col-md-6 col-lg-2 mx-5">
               <img
                 class="h-75"
                 src="https://trucchifacebook.com/wp-content/uploads/2014/11/Profilo-facebook-anonimo-750x420.jpg"

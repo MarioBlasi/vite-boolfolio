@@ -5,34 +5,29 @@ export default {
 </script>
 
 <template>
-  <header class="shadow-3 bg-black">
+  <header class="bg-black pt-5">
     <nav class="">
-      <div class="container-fluid nav justify-content-center p-3">
+      <div class="container-fluid nav justify-content-center p-2">
         <ul class="nav navbar-inverse">
-          <li>
-            <a id="len1" class="hoverable" href="#"
-              ><router-link
-                class="nav-link"
-                :to="{ name: 'home' }"
-                href="/"
-                aria-current="page"
-                ><h3>Home</h3></router-link
-              ></a
+          <li id="len1" class="hoverable" href="#">
+            <router-link :to="{ name: 'home' }" href="/" aria-current="page"
+              ><h5>Home</h5></router-link
             >
           </li>
 
-          <li>
-            <a id="len3" class="hoverable" href="#"
-              ><router-link class="nav-link" :to="{ name: 'about' }"
-                ><h3>About</h3></router-link
-              ></a
+          <li id="len3" class="hoverable" href="#">
+            <router-link :to="{ name: 'about' }"><h5>About</h5></router-link>
+          </li>
+
+          <li id="len4" class="hoverable" href="#">
+            <router-link :to="{ name: 'contacts' }"
+              ><h5>Contacts</h5>
+            </router-link>
             >
           </li>
-          <li>
-            <a id="len4" class="hoverable" href="#">
-              <router-link class="nav-link" :to="{ name: 'contacts' }"
-                ><h3>Contacts</h3>
-              </router-link></a
+
+          <li id="len2" class="hoverable" href="#">
+            <router-link :to="{ name: 'resume' }"><h5>resume</h5> </router-link>
             >
           </li>
         </ul>
@@ -41,4 +36,7 @@ export default {
   </header>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.nav-link {
+}
+</style>

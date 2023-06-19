@@ -37,7 +37,11 @@ export default {
             <div class="col-xs-12 col-md-6">
               <div class="about-author">
                 <figure class="author-thumb">
-                  <img src="images/author.jpg" alt="" />
+                  <img
+                    src="https://trucchifacebook.com/wp-content/uploads/2014/11/Profilo-facebook-anonimo-750x420.jpg "
+                    h-25
+                    alt=""
+                  />
                 </figure>
                 <!-- /.author-bio -->
                 <div class="author-desc">
@@ -61,61 +65,82 @@ export default {
               <div class="section-title clear">
                 <h3>Skills</h3>
               </div>
-              <div class="skill-wrapper">
-                <div class="progress clear">
-                  <div class="skill-name bg-danger">JavaScript</div>
+              <div class="skill-wrapper shadow">
+                <div class="progress clear p-3 shadow mt-4">
+                  <div class="skill-name bg-danger rounded">JavaScript</div>
                   <div class="skill-bar">
-                    <div class="bar"></div>
+                    <div class="bar red" style="width: 55%"></div>
                   </div>
-                  <div class="skill-lavel" data-skill-value="90%"></div>
+                  <div class="skill-lavel text-danger" data-skill-value="70%">
+                    <h4>70%</h4>
+                  </div>
                 </div>
                 <!-- /.progress -->
-                <div class="progress clear">
-                  <div class="skill-name">CSS</div>
+                <div class="progress clear p-3 shadow mt-4">
+                  <div class="skill-name bg-danger rounded">CSS</div>
                   <div class="skill-bar">
-                    <div class="bar"></div>
+                    <div class="bar red" style="width: 90%"></div>
                   </div>
-                  <div class="skill-lavel" data-skill-value="78%"></div>
+                  <div class="skill-lavel text-danger" data-skill-value="90%">
+                    <h4>90%</h4>
+                  </div>
                 </div>
                 <!-- /.progress -->
-                <div class="progress clear">
-                  <div class="skill-name">SASS</div>
+                <div class="progress clear p-3 shadow mt-4">
+                  <div class="skill-name bg-danger rounded">SASS</div>
                   <div class="skill-bar">
-                    <div class="bar"></div>
+                    <div class="bar red" style="width: 90%"></div>
                   </div>
-                  <div class="skill-lavel" data-skill-value="78%"></div>
+                  <div class="skill-lavel text-danger">
+                    <h4>90%</h4>
+                  </div>
                 </div>
                 <!-- /.progress -->
-                <div class="progress clear">
-                  <div class="skill-name">VUE</div>
+                <div class="progress clear p-3 shadow mt-4">
+                  <div class="skill-name bg-danger rounded">VUE</div>
                   <div class="skill-bar">
-                    <div class="bar"></div>
+                    <div class="bar red" style="width: 70%"></div>
                   </div>
-                  <div class="skill-lavel" data-skill-value="85%"></div>
+                  <div class="skill-lavel text-danger" data-skill-value="75%">
+                    <h4>70%</h4>
+                  </div>
                 </div>
                 <!-- /.progress -->
-                <div class="progress clear">
-                  <div class="skill-name">HTML5</div>
+                <div class="progress clear p-3 shadow mt-4">
+                  <div class="skill-name bg-danger rounded">HTML5</div>
                   <div class="skill-bar">
-                    <div class="bar"></div>
+                    <div class="bar red" style="width: 90%"></div>
                   </div>
-                  <div class="skill-lavel" data-skill-value="95%"></div>
+                  <div class="skill-lavel text-danger" data-skill-value="75%">
+                    <h4>90%</h4>
+                  </div>
                 </div>
                 <!-- /.progress -->
-                <div class="progress clear">
-                  <div class="skill-name">PHP</div>
+                <div class="progress clear p-3 shadow mt-4">
+                  <div class="skill-name bg-danger rounded">PHP</div>
                   <div class="skill-bar">
-                    <div class="bar"></div>
+                    <div class="bar red" style="width: 80%"></div>
                   </div>
-                  <div class="skill-lavel" data-skill-value="70%"></div>
+                  <div class="skill-lavel text-danger" data-skill-value="75%">
+                    <h4>80%</h4>
+                  </div>
                 </div>
                 <!-- /.progress -->
-                <div class="progress clear">
-                  <div class="skill-name">LARAVEL</div>
+                <div class="progress clear p-3 shadow mt-4">
+                  <div class="skill-name bg-danger rounded">LARAVEL</div>
                   <div class="skill-bar">
-                    <div class="bar"></div>
+                    <div class="bar red" style="width: 70%"></div>
                   </div>
-                  <div class="skill-lavel" data-skill-value="75%"></div>
+                  <div class="skill-lavel text-danger" data-skill-value="75%">
+                    <h4>70%</h4>
+                  </div>
+                </div>
+                <div class="progress clear p-3 shadow mt-4">
+                  <div class="skill-name bg-danger rounded">REACT</div>
+                  <div class="skill-bar">
+                    <div class="bar red" style="width: 0%"></div>
+                  </div>
+                  <h6><strong>learning...</strong></h6>
                 </div>
                 <!-- /.progress -->
               </div>
