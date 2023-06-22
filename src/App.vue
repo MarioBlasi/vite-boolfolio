@@ -49,6 +49,7 @@ export default {
     <!--Favicon-->
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
   </head>
+
   <app-header></app-header>
   <router-view></router-view>
 </template>

@@ -13,9 +13,7 @@ export default {
     <main class="site-wrapper">
       <div class="pt-table">
         <div class="pt-tablecell page-contact relative">
-          <!-- .close -->
           <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
-          <!-- /.close -->
 
           <div class="container">
             <div class="row">
@@ -24,7 +22,7 @@ export default {
               >
                 <div class="page-title text-center">
                   <h2>
-                    Get in <span class="primary">touch</span>
+                    Contact <span class="primary">touch</span>
                     <span class="title-bg">Contact</span>
                   </h2>
                   <p>
@@ -35,7 +33,6 @@ export default {
                 </div>
               </div>
             </div>
-            <!-- /.row -->
 
             <div class="row">
               <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
@@ -52,7 +49,7 @@ export default {
                     </div>
                   </div>
                 </div>
-                <!-- /.contact-block -->
+
                 <div class="contact-block">
                   <div class="media">
                     <div class="media-left">
@@ -64,7 +61,7 @@ export default {
                     </div>
                   </div>
                 </div>
-                <!-- /.contact-block -->
+
                 <div class="contact-block">
                   <div class="media">
                     <div class="media-left">
@@ -76,7 +73,6 @@ export default {
                     </div>
                   </div>
                 </div>
-                <!-- /.contact-block -->
 
                 <ul class="contact-social">
                   <li>
@@ -131,7 +127,7 @@ export default {
                       />
                     </div>
                   </div>
-                  <!-- ./col- -->
+
                   <div class="col-xs-12 col-sm-6">
                     <div class="input-field email">
                       <span class="input-icon" id="email"
@@ -146,7 +142,7 @@ export default {
                       />
                     </div>
                   </div>
-                  <!-- ./col- -->
+
                   <div class="col-xs-12 col-sm-12">
                     <div class="input-field">
                       <span class="input-icon" id="subject"
@@ -161,7 +157,7 @@ export default {
                       />
                     </div>
                   </div>
-                  <!-- ./col- -->
+
                   <div class="col-xs-12 col-sm-12">
                     <div class="input-field message">
                       <span class="input-icon"><i class="tf-pencil2"></i></span>
@@ -174,7 +170,7 @@ export default {
                       ></textarea>
                     </div>
                   </div>
-                  <!-- ./col- -->
+
                   <div class="col-xs-12 col-sm-12">
                     <div class="input-field">
                       <span class="btn-border">
@@ -193,22 +189,146 @@ export default {
                       Something went wrong, please try again later
                     </div>
                   </div>
-                  <!-- ./col- -->
                 </form>
-                <!-- /.row -->
               </div>
-              <!-- /.col- -->
             </div>
-            <!-- /.row -->
           </div>
-          <!-- /.container -->
         </div>
-        <!-- /.pt-tablecell -->
       </div>
-      <!-- /.pt-table -->
     </main>
-    <!-- /.site-wrapper -->
   </body>
 </template>
 
 <style lang="sass" scoped></style>
+
+<!-- <script>
+import AppBanner from "../components/AppBanner.vue";
+
+
+export default {
+  name: "ContactView",
+  data() {
+    return {
+      store,
+      name: "",
+      email: "",
+      message: "",
+      loading: false,
+      success: false,
+      errors: {}
+    };
+  },
+  methods: {
+    sendForm() {
+      this.loading = true;
+      const data = {
+        name: this.name,
+        email: this.email,
+        message: this.message
+      };
+
+  
+      this.errors = {};
+
+     
+    
+      axios
+        .post(`${this.store.apiBaseUrl}/api/contacts`, data)
+        .then((response) => {
+          this.success = response.data.success;
+          if (!this.success) {
+            this.errors = response.data.errors;
+          } else {
+            // ripulisco i campi di input
+            this.name = "";
+            this.email = "";
+            this.message = "";
+          }
+          this.loading = false;
+        });
+    }
+  }
+};
+</script>
+
+<template>
+  <AppBanner title="Contacts"></AppBanner>
+  <section class="contact_me py-5">
+    <div class="inner-wrapper">
+      <div class="container-fluid text-center">
+        <h2 class="text-uppercase">contact me</h2>
+        <div v-if="success" class="alert alert-success text-start" role="alert">
+          Messaggio inviato con successo!
+        </div>
+        <div class="row">
+          <form @submit.prevent="sendForm()" class="col-12 text-start">
+            <div class="mb-3">
+              <input
+                class="border-0 border-bottom form-control"
+                :class="{ 'is-invalid': errors.name }"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+                v-model="name"
+              />
+              <p
+                v-for="(error, index) in errors.name"
+                :key="`message-error-${index}`"
+                class="invalid-feedback"
+              >
+                {{ error }}
+              </p>
+            </div>
+            <div class="mb-3">
+              <input
+                class="border-0 border-bottom form-control"
+                :class="{ 'is-invalid': errors.email }"
+                type="text"
+                name="email"
+                id="email"
+                placeholder="Email"
+                v-model="email"
+              />
+              <p
+                v-for="(error, index) in errors.email"
+                :key="`message-error-${index}`"
+                class="invalid-feedback"
+              >
+                {{ error }}
+              </p>
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="border-0 border-bottom form-control"
+                :class="{ 'is-invalid': errors.message }"
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Message"
+                v-model="message"
+              ></textarea>
+              <p
+                v-for="(error, index) in errors.message"
+                :key="`message-error-${index}`"
+                class="invalid-feedback"
+              >
+                {{ error }}
+              </p>
+            </div>
+            <button
+              class="btn btn-lg btn-primary text-white"
+              type="submit"
+              :disabled="loading"
+            >
+              {{ loading ? "Sending..." : "Send" }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped lang="scss"></style> -->

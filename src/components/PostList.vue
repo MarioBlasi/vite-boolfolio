@@ -76,7 +76,7 @@ export default {
 
         <div class="container">
           <div class="row">
-            <div class="col-10 col-xs-12 col-md-6 col-lg-5 mx-5">
+            <div class="col-12 col-md-6 col-lg-5 mx-5">
               <div class="page-title">
                 <h2>
                   Mario <span class="primary">Blasi</span>
@@ -95,16 +95,17 @@ export default {
                 </p>
               </div>
             </div>
-            <div class="col col-xs-12 col-md-6 col-lg-2 mx-5">
+            <div class="col-12 col-md-6 col-lg-5 mx-5">
               <img
-                class="h-75"
-                src="https://trucchifacebook.com/wp-content/uploads/2014/11/Profilo-facebook-anonimo-750x420.jpg"
+                class="img-fluid h-50"
+                src="https://media.licdn.com/dms/image/D4E03AQGqEltXtQwLJA/profile-displayphoto-shrink_800_800/0/1687375093219?e=1692835200&v=beta&t=96ZMiTGFp8WkmSUzK1oWrrgZKG6GdzbCe3omEyu8Wio"
                 alt=""
               />
             </div>
           </div>
           <!-- /.row -->
         </div>
+
         <!-- /.container -->
       </div>
       <!-- /.pt-tablecell -->
@@ -112,169 +113,181 @@ export default {
     <!-- /.pt-table -->
   </main>
   <!-- /.site-wrapper -->
-
-  <section class="posts" v-if="posts && !loading">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-        <div
-          class="col d-flex justify-content-center"
-          v-for="post in posts.data"
-        >
-          <div class="card h-100">
-            <img
-              class="card-img-top shadow"
-              :src="getImageFromPath(post.cover_image)"
-              alt=""
-            />
-            <div class="card-body">
-              <h2>
-                {{ post.title }}
-              </h2>
-              <p>
-                {{ truncateText(post.content) }}
-              </p>
-              <router-link
-                class="nav-link"
-                :to="{ name: 'single-post', params: { slug: post.slug } }"
-                >Read more</router-link
-              >
-            </div>
-            <div class="card-footer">
-              <span class="badge bg-info">{{ post.id }}</span>
+  <div class="container box">
+    <section class="posts" v-if="posts && !loading">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card-deck">
+              <div class="card" v-for="post in posts.data" :key="post.id">
+                <div class="row p-3">
+                  <div class="col-md-6">
+                    <div class="zoom-effect">
+                      <img
+                        class="card-img-top shadow zoomable-image"
+                        :src="getImageFromPath(post.cover_image)"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 d-flex flex-column">
+                    <div class="card-body">
+                      <h2 class="card-title">
+                        <strong>{{ post.title }}</strong>
+                      </h2>
+                      <p class="card-text">
+                        {{ truncateText(post.content) }}
+                      </p>
+                      <router-link
+                        class="nav-link"
+                        :to="{
+                          name: 'single-post',
+                          params: { slug: post.slug }
+                        }"
+                        ><strong>Leggi di più</strong></router-link
+                      >
+                    </div>
+                    <div class="mt-auto card-footer">
+                      <span class="badge bg-danger">{{ post.id }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <nav aria-label="Page navigation" class="py-4 text-center">
-        <ul class="pagination">
-          <li class="page-item">
-            <button
-              class="page-link"
-              aria-label="Previous"
-              v-if="posts.prev_page_url"
-              @click="prevPage(posts.prev_page_url)"
-            >
-              <span aria-hidden="true">&laquo;</span>
-            </button>
-          </li>
-          <li class="page-item">
-            <button
-              class="page-link"
-              aria-label="Next"
-              v-if="posts.next_page_url"
-              @click="nextPage(posts.next_page_url)"
-            >
-              <span aria-hidden="true">&raquo;</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </section>
-  <div v-else>
-    <section class="loading">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="card" aria-hidden="true">
-              <img
-                src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title placeholder-glow">
-                  <span class="placeholder col-6"></span>
-                </h5>
-                <p class="card-text placeholder-glow">
-                  <span class="placeholder col-7"></span>
-                  <span class="placeholder col-4"></span>
-                  <span class="placeholder col-4"></span>
-                  <span class="placeholder col-6"></span>
-                  <span class="placeholder col-8"></span>
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-primary disabled placeholder col-6"
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" aria-hidden="true">
-              <img
-                src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title placeholder-glow">
-                  <span class="placeholder col-6"></span>
-                </h5>
-                <p class="card-text placeholder-glow">
-                  <span class="placeholder col-7"></span>
-                  <span class="placeholder col-4"></span>
-                  <span class="placeholder col-4"></span>
-                  <span class="placeholder col-6"></span>
-                  <span class="placeholder col-8"></span>
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-primary disabled placeholder col-6"
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" aria-hidden="true">
-              <img
-                src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title placeholder-glow">
-                  <span class="placeholder col-6"></span>
-                </h5>
-                <p class="card-text placeholder-glow">
-                  <span class="placeholder col-7"></span>
-                  <span class="placeholder col-4"></span>
-                  <span class="placeholder col-4"></span>
-                  <span class="placeholder col-6"></span>
-                  <span class="placeholder col-8"></span>
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-primary disabled placeholder col-6"
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" aria-hidden="true">
-              <img
-                src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title placeholder-glow">
-                  <span class="placeholder col-6"></span>
-                </h5>
-                <p class="card-text placeholder-glow">
-                  <span class="placeholder col-7"></span>
-                  <span class="placeholder col-4"></span>
-                  <span class="placeholder col-4"></span>
-                  <span class="placeholder col-6"></span>
-                  <span class="placeholder col-8"></span>
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-primary disabled placeholder col-6"
-                ></a>
-              </div>
-            </div>
-          </div>
+        <div aria-label="Page navigation" class="py-4 text-center">
+          <ul class="pagination">
+            <li class="page-item">
+              <button
+                class="page-link mb-5"
+                aria-label="Prev"
+                v-if="posts.prev_page_url"
+                @click="prevPage(posts.prev_page_url)"
+              >
+                <span aria-hidden="true" class="h-25">&#129194;</span>
+              </button>
+            </li>
+            <li class="page-item mb-5">
+              <button
+                class="page-link"
+                aria-label="Next"
+                v-if="posts.next_page_url"
+                @click="nextPage(posts.next_page_url)"
+              >
+                <span aria-hidden="true" class="h-25">&#129195;</span>
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
+
+    <div v-else>
+      <section class="loading">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card" aria-hidden="true">
+                <img
+                  src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                  </h5>
+                  <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary disabled placeholder col-6"
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" aria-hidden="true">
+                <img
+                  src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                  </h5>
+                  <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary disabled placeholder col-6"
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" aria-hidden="true">
+                <img
+                  src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                  </h5>
+                  <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary disabled placeholder col-6"
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" aria-hidden="true">
+                <img
+                  src="https://127.0.0.1:8000/edizioni.simone.it/wp-content/uploads/2022/04/diritto-del-lavoro-lanciano.png"
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                  </h5>
+                  <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary disabled placeholder col-6"
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
   <!-- ProjectCard.vue -->
   <div>
@@ -284,4 +297,17 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+main {
+  background-color: rgba(48, 48, 56, 0.116);
+  margin-bottom: 5rem;
+}
+
+.zoomable-image {
+  transition: transform 0.8s ease-in-out;
+}
+
+.zoomable-image:hover {
+  transform: scale(0.8);
+}
+</style>

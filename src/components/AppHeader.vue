@@ -23,12 +23,16 @@ export default {
             <router-link :to="{ name: 'contacts' }"
               ><h5>Contacts</h5>
             </router-link>
-            >
           </li>
 
           <li id="len2" class="hoverable" href="#">
             <router-link :to="{ name: 'resume' }"><h5>resume</h5> </router-link>
-            >
+          </li>
+
+          <li id="len2" class="hoverable" href="#">
+            <router-link :to="{ name: 'myworks' }"
+              ><h5>my works</h5>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -36,7 +40,4 @@ export default {
   </header>
 </template>
 
-<style lang="scss">
-.nav-link {
-}
-</style>
+<style lang="scss"></style>

@@ -84,7 +84,6 @@ p:last-child {
   color: inherit;
 }
 
-button,
 input,
 select,
 textarea,
@@ -648,10 +647,13 @@ label {
 .nicescroll-rails {
   z-index: 2;
 }
+.history-block {
+  margin-bottom: 5rem;
+  .history-scroller {
+    padding-top: 82px;
 
-.history-scroller {
-  padding-top: 82px;
-  max-height: 377px;
+    display: inline-block;
+  }
 }
 
 .history-item {
@@ -713,6 +715,11 @@ label {
   top: 100%;
   width: 0;
   border-top: 19.05px solid #293342;
+}
+.image-container {
+  background-image: url("./img/pizzeria-lato-dx.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .service-hex {
@@ -1331,3 +1338,4 @@ nav {
     }
   }
 }
+//-----------------------///

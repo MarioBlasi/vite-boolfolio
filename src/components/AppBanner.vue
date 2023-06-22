@@ -10,7 +10,9 @@ export default {
 <template>
   <div class="bg-dark py-5 text-white">
     <div class="container text-center">
-      <h5>{{ title }}</h5>
+      <h5>
+        <strong>{{ title }}</strong>
+      </h5>
     </div>
   </div>
 </template>

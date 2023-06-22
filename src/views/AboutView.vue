@@ -38,8 +38,8 @@ export default {
               <div class="about-author">
                 <figure class="author-thumb">
                   <img
-                    src="https://trucchifacebook.com/wp-content/uploads/2014/11/Profilo-facebook-anonimo-750x420.jpg "
-                    h-25
+                    class="h-25"
+                    src="https://media.licdn.com/dms/image/D4E03AQGqEltXtQwLJA/profile-displayphoto-shrink_800_800/0/1687375093219?e=1692835200&v=beta&t=96ZMiTGFp8WkmSUzK1oWrrgZKG6GdzbCe3omEyu8Wio"
                     alt=""
                   />
                 </figure>
@@ -58,6 +58,14 @@ export default {
                 web design for the past three years although I have experience
                 in branding and print.Projects.
               </p>
+              <div>
+                <i class="fa-brands fa-linkedin fa-2xl p-2">
+                  <a href="https://www.linkedin.com/in/mario-blasi/"></a
+                ></i>
+                <i class="fa-brands fa-github fa-2xl p-2">
+                  <a href="https://www.linkedin.com/in/mario-blasi/"></a
+                ></i>
+              </div>
             </div>
             <!-- /.col -->
 
@@ -158,4 +166,4 @@ export default {
   </main>
 </template>
 
-<style lang="sass" scoped></style>
+<style></style>

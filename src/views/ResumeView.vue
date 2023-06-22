@@ -21,7 +21,7 @@ export default {
             <div
               class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8"
             >
-              <div class="page-title text-center">
+              <div class="page-title text-center mt-5">
                 <h2>
                   My <span class="primary">history</span>
                   <span class="title-bg">Resume</span>
@@ -38,8 +38,8 @@ export default {
 
           <div class="row">
             <div class="col-xs-12 col-sm-6">
-              <div class="history-block">
-                <div class="section-title light clear">
+              <div class="history-block rounded">
+                <div class="section-title light clear rounded">
                   <h3>Education</h3>
                 </div>
                 <!-- /.section-title -->
@@ -51,7 +51,7 @@ export default {
                     </div>
                     <div class="history-text">
                       <h5>Merin Land College</h5>
-                      <span>2012 - 2014</span>
+                      <span>2012 - 2014111111111111111111</span>
                     </div>
                   </div>
                   <!-- /.history-item -->
@@ -61,7 +61,7 @@ export default {
                       <i class="tf-documents5"></i>
                     </div>
                     <div class="history-text">
-                      <h5>Merin Land College</h5>
+                      <h5>Merin Land College22222222222222222</h5>
                       <span>2012 - 2014</span>
                       <p>
                         Claritas est etiam processus dynamicus, qui <br />
@@ -77,7 +77,37 @@ export default {
                     </div>
                     <div class="history-text">
                       <h5>Merin Land College</h5>
-                      <span>2012 - 2014</span>
+                      <span>2012 - 2014 333333333333</span>
+                    </div>
+                  </div>
+                  <div class="history-item">
+                    <div class="history-icon">
+                      <span class="history-hex"></span>
+                      <i class="tf-documents5"></i>
+                    </div>
+                    <div class="history-text">
+                      <h5>Merin Land College</h5>
+                      <span>2012 - 2014 333333333333</span>
+                    </div>
+                  </div>
+                  <div class="history-item">
+                    <div class="history-icon">
+                      <span class="history-hex"></span>
+                      <i class="tf-documents5"></i>
+                    </div>
+                    <div class="history-text">
+                      <h5>Merin Land College</h5>
+                      <span>2012 - 2014 333333333333</span>
+                    </div>
+                  </div>
+                  <div class="history-item">
+                    <div class="history-icon">
+                      <span class="history-hex"></span>
+                      <i class="tf-documents5"></i>
+                    </div>
+                    <div class="history-text">
+                      <h5>Merin Land College</h5>
+                      <span>2012 - 2014 333333333333</span>
                     </div>
                   </div>
                   <!-- /.history-item -->
@@ -88,7 +118,7 @@ export default {
                     </div>
                     <div class="history-text">
                       <h5>Merin Land College</h5>
-                      <span>2012 - 2014</span>
+                      <span>2012 - 2014 333333333333</span>
                     </div>
                   </div>
                   <!-- /.history-item -->
@@ -107,10 +137,10 @@ export default {
               </div>
               <!-- /.history-block -->
             </div>
-            <!-- /.col -->
+            <!-- /.col Experiences-->
             <div class="col-xs-12 col-sm-6">
-              <div class="history-block">
-                <div class="section-title light clear">
+              <div class="history-block rounded shadow">
+                <div class="section-title light clear rounded shadow">
                   <h3>Experiences</h3>
                 </div>
                 <!-- /.section-title -->
@@ -121,7 +151,7 @@ export default {
                       <i class="tf-documents5"></i>
                     </div>
                     <div class="history-text">
-                      <h5>Merin Land College</h5>
+                      <h5>Merinnnnnnn Land College</h5>
                       <span>2012 - 2014</span>
                     </div>
                   </div>
